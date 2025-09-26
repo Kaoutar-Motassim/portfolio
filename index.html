@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> <!-- For icons -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Kaoutar Motassim</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Education & Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Kaoutar-Motassim" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kaoutar-motassim-043092316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <canvas id="defaultCanvas0" class="p5Canvas" width="800" height="800" style="width: 400px; height: 400px;"></canvas>
+    <h1>Hi, <span class="highlight">Kaoutar</span> here.</h1>
+    <h2>I create stuff sometimes.</h2>
+    <p>I’m a student in Computer Science, passionate about AI, web development, and learning new technologies. I enjoy building projects and gaining real-world experience through clubs and collaborations.</p>
+    <a href="#contact" class="btn">Say hi!</a>
+  </section>
+  <!-- About Section -->
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="section-title">
+    <h2>/ about me</h2>
+    <div class="line"></div>
+  </div>
+  
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        I am currently a <strong>Computer Science student</strong>, passionate about 
+        <strong>Artificial Intelligence</strong>, <strong>Web Development</strong>, and 
+        <strong>Problem Solving</strong>. I love creating projects and learning new technologies 
+        that can have a real-world impact.
+      </p>
+      <p>
+        Here are some technologies I have been working with:
+      </p>
+      <div class="skills-list">
+        <ul>
+          <li>Python</li>
+          <li>C / C++</li>
+          <li>JavaScript</li>
+        </ul>
+        <ul>
+          <li>HTML & CSS</li>
+          <li>MySQL/PostgreSQL</li>
+          <li>Flask</li>
+        </ul>
+        <ul>
+          <li>React.js</li>
+          <li>Express.js</li>
+          <li>Socket.IO</li>
+        </ul>
+      </div>
+      <p>
+        Outside of studies, I’m interested in exploring AI innovations, creating digital content, 
+        and participating in tech clubs and events.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="me.jpg" alt="My Picture">
+    </div>
+  </div>
+</section>
+
+
+<section id="experience" class="experience">
+  <div class="section-title">
+    <h2>/ Education & Experience</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="experience-container">
+    <!-- Left column -->
+    <ul class="experience-list">
+      <li class="active" data-tab="exp0">Bachelor's in Computer Science</li>
+      <li data-tab="exp1">AI&Dev Community (HR)</li>
+      <li data-tab="exp2">AI&Dev Community (Vice President)</li>
+    </ul>
+
+    <!-- Right column -->
+    <div class="experience-details">
+      <div class="detail active" id="exp0">
+        <h3>Computer Science @ <span>Faculty of Science Ben M'sik - UH2C</span></h3>
+        <p class="date">Sep 2023 – Jun 2026</p>
+        <ul>
+          <li>Gained solid foundations in statistics, probability, HTML, CSS, JavaScript, React, C, C++, Assembly, Linear Algebra, Python, MySQL, OS, and Shell Programming.</li>
+        </ul>
+      </div>
+
+      <div class="detail" id="exp1">
+        <h3>HR @ <span>AI&Dev Community</span></h3>
+        <p class="date">Sep 2024 – Jul 2025</p>
+        <ul>
+          <li>Organized multiple activities and events with the club.</li>
+          <li>Worked on engaging and managing community members.</li>
+        </ul>
+      </div>
+
+      <div class="detail" id="exp2">
+        <h3>Vice President @ <span>AI&Dev Community</span></h3>
+        <p class="date">Jul 2025 – Present</p>
+        <ul>
+          <li>Leading the club’s new chapter on AI & Data Science.</li>
+          <li>Helping people learn AI and Data Science from scratch.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  // Experience tabs (scoped to #experience to avoid colliding with Certifications)
+  (function() {
+    const expTabs = document.querySelectorAll('#experience .experience-list li');
+    const expDetails = document.querySelectorAll('#experience .experience-details .detail');
+    if (!expTabs.length || !expDetails.length) return;
+
+    expTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        expTabs.forEach(t => t.classList.remove('active'));
+        expDetails.forEach(d => d.classList.remove('active'));
+
+        tab.classList.add('active');
+        const panel = document.getElementById(tab.dataset.tab);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  })();
+</script>
+
+
+
+
+<section id="certifications" class="experience">
+  <div class="section-title">
+    <h2>/ Certifications</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="experience-container">
+    <!-- Left column -->
+    <ul class="experience-list">
+      <li class="active" data-tab="cert0">Introduction to front end development</li>
+      <li data-tab="cert1">Programming with JavaScript</li>
+      <li data-tab="cert2">Html&CSS in depth</li>
+      <li data-tab="cert7">Version control</li>
+      <li data-tab="cert5">React basics</li>
+      <li data-tab="cert6">Advanced React</li>
+      <li data-tab="cert8">What is Data science</li>
+      <li data-tab="cert4">Data Science and Artificial Intelligence Bootcamp</li>
+      <li data-tab="cert3">Innovation Skills Competition 2025</li>
+    </ul>
+
+    <!-- Right column -->
+    <div class="experience-details">
+      <div class="detail active" id="cert0">
+        <h3>Introduction to front end development @ <span>meta</span></h3>
+        <p class="date">feb 13, 2025</p>
+        <ul>
+          <li>Completed the ‘Introduction to Frontend Development’ certificate, learning HTML, CSS, JavaScript, responsive design and Bootstrap to build interactive and modern web pages.</li>
+        </ul>
+        <img src="certif1.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+
+      <div class="detail" id="cert1">
+        <h3>Programming with JavaScript @ <span>meta</span></h3>
+        <p class="date">mar 2, 2025</p>
+        <ul>
+          <li>Completed the ‘Programming with JavaScript’ certificate, covering JS fundamentals, DOM manipulation, modules, JSON, Node.js, and npm to build dynamic web applications.</li>
+        </ul>
+        <img src="certif2.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+
+      <div class="detail" id="cert2">
+        <h3>Html&CSS in depth @ <span>meta</span></h3>
+        <p class="date">mar 17, 2025</p>
+        <ul>
+          <li>Completed the ‘HTML & CSS In-Depth’ certificate, mastering advanced HTML and CSS techniques to create responsive, accessible, and visually appealing web pages.</li>
+        </ul>
+        <img src="certif3.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert7">
+        <h3>Version control @ <span>meta</span></h3>
+        <p class="date">mar 6, 2025</p>
+        <ul>
+          <li>Completed the Version Control certificate, learning to use Git, GitHub, forking, and repository management to collaborate effectively on software projects.</li>
+        </ul>
+        <img src="certif4.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert5">
+        <h3>React basics @ <span>meta</span></h3>
+        <p class="date">mar 25, 2025</p>
+        <ul>
+          <li>Completed the ‘React Basics’ certificate, learning to build interactive user interfaces using React, including components, props, state, and JSX.</li>
+        </ul>
+        <img src="certif5.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert6">
+        <h3>Advanced React @ <span>meta</span></h3>
+        <p class="date">mar 29, 2025</p>
+        <ul>
+          <li>Completed the ‘Advanced React’ certificate, mastering advanced concepts like hooks, context API, state management, and building scalable, dynamic web applications.</li>
+        </ul>
+        <img src="certif6.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert8">
+        <h3>What is data science @ <span>IBM</span></h3>
+        <p class="date">aug 29, 2025</p>
+        <ul>
+          <li>Completed the ‘Data Science’ certificate, gaining foundational skills in data analysis, visualization, statistics, and basic machine learning to extract insights from structured and unstructured data.</li>
+        </ul>
+        <img src="certif8.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert4">
+        <h3>Data Science and Artificial Intelligence Bootcamp @ <span>Orange Digital Center</span></h3>
+        <p class="date">jun 2 - jul 29</p>
+        <ul>
+          <li>Completed the ‘Data Science and Artificial Intelligence Bootcamp,’ learning data analysis, visualization, machine learning fundamentals, and AI concepts to solve real-world problems.</li>
+        </ul>
+        <img src="certif10.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+      <div class="detail" id="cert3">
+        <h3>Innovation Skills Competition 2025 @ <span>Orange Digital Center</span></h3>
+        <p class="date">Apr 22 - Apr 23</p>
+        <ul>
+          <li>Designed and implemented an AI-powered solution leveraging deep learning and computer vision to automatically detect cast characters on aluminum wheel hubs, improving inspection efficiency and accuracy by automating tasks previously done manually.</li>
+        </ul>
+        <img src="certif11.jpg" alt="Certification Image" class="clickable-img" style="width:350px; margin-top:10px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Certifications tabs (scoped to #certifications)
+  (function() {
+    const certTabs = document.querySelectorAll('#certifications .experience-list li');
+    const certDetails = document.querySelectorAll('#certifications .experience-details .detail');
+    if (!certTabs.length || !certDetails.length) return;
+
+    certTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        certTabs.forEach(t => t.classList.remove('active'));
+        certDetails.forEach(d => d.classList.remove('active'));
+
+        tab.classList.add('active');
+        const panel = document.getElementById(tab.dataset.tab);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  })();
+</script>
+
+<!-- Image modal markup -->
+<div class="img-modal" id="imgModal" aria-hidden="true" role="dialog">
+  <div class="img-modal-content" role="document">
+    <button class="img-modal-close" id="imgModalClose" aria-label="Close image">&times;</button>
+    <img src="" alt="" id="imgModalImg">
+  </div>
+</div>
+
+<script>
+  // Image modal behavior: open when clicking images with class .clickable-img
+  (function() {
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgModalImg');
+    const closeBtn = document.getElementById('imgModalClose');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Openers
+    const clickables = document.querySelectorAll('#certifications .experience-details img.clickable-img, .cert-cards img.clickable-img');
+    clickables.forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => openModal(img.src, img.alt));
+    });
+
+    // Close on overlay click (only if clicking outside the content)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Close button
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+  })();
+</script>
+
+
+
+<section id="projects">
+  <div class="section-title">
+    <h2>/ Projects</h2>
+    <div class="line"></div>
+  </div>
+  <div class="project-cards">
+    <article class="project-card">
+      <p class="project-icon">🗀</p>
+      <h3>React learning app</h3>
+      <p>A web application designed to help users learn and master React, covering both basic and advanced concepts. 
+    The app provides interactive lessons, practical examples, and guided exercises that make understanding React’s core features—such as components, state management, hooks, and routing—easy and engaging. 
+    Ideal for beginners and developers looking to strengthen their React skills.</p>
+    <P>React, JavaScript, HTML, CSS, React Hooks, React Router, Component-based Architecture</p>
+      <a href="https://lien-du-projet1.com" target="_blank">see the project</a>
+    </article>
+    <article class="project-card">
+      <p class="project-icon">🗀</p>
+      <h3>ObservaLog – Real-Time Distributed Logging & Monitoring System</h3>
+      <p>ObservaLog is a real-time distributed logging and monitoring platform built with React, Node.js, PostgreSQL, Prisma, RabbitMQ, and Socket.IO. 
+    It collects, stores, and visualizes application logs, providing instant alerts and a dynamic dashboard for better system observability and troubleshooting.</p>
+    <p>React, Node.js, PostgreSQL, Prisma, RabbitMQ, Socket.IO, Real-time Monitoring, Logging, Dashboard Development</p>
+      <a href="https://lien-du-projet2.com" target="_blank">see the project</a>
+    </article>
+    <!-- Ajoutez d'autres projets ici -->
+  </div>
+</section>
+
+
+</body>
+</html>
