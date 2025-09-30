@@ -407,3 +407,96 @@ body {
 }
 
 .img-modal-close:focus { outline: 2px solid #64ffda; }
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;  /* remove fixed margin */
+  }
+
+  .section-title h2 {
+    margin-left: 0;  /* center titles on mobile */
+    text-align: center;
+  }
+
+  .experience-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-list {
+    margin-left: 0;  /* remove fixed margin */
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-card {
+    width: 90%;  /* shrink projects to fit screen */
+  }
+}
+
+/* ===================== */
+/* ANIMATIONS            */
+/* ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+  animation: slideDown 1s ease;
+}
+
+.about-container {
+  animation: fadeUp 1.5s ease;
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.about-img img {
+  transition: transform 0.3s;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
